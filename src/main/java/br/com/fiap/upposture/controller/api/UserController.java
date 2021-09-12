@@ -4,8 +4,10 @@ import br.com.fiap.upposture.model.StatusEnum;
 import br.com.fiap.upposture.model.User;
 import br.com.fiap.upposture.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.validation.Valid;
@@ -21,6 +23,11 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<User> create(@RequestBody @Valid User user, UriComponentsBuilder uriBuilder) {
+        if ( repository.existsByEmail(user.getEmail()) ) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).build();
+        }
+
+        user.setStatus(StatusEnum.ACTIVE);
         repository.save(user);
 
         URI uri = uriBuilder
@@ -40,9 +47,14 @@ public class UserController {
 
         User user = optional.get();
 
-        user.setName(newUser.getName());
         user.setEmail(newUser.getEmail());
         user.setPassword(newUser.getPassword());
+        user.setCpf(newUser.getCpf());
+        user.setPhone(newUser.getPhone());
+        user.setName(newUser.getName());
+        user.setStatus(newUser.getStatus());
+        user.setGender(newUser.getGender());
+
 
         repository.save(user);
 
@@ -63,7 +75,7 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("{id}")
+    @GetMapping
     public ResponseEntity<User> login(@RequestBody @Valid LoginResource login ) {
         return ResponseEntity.of(repository.findByEmailAndPasswordAndStatus(login.getEmail(), login.getPassword(), StatusEnum.ACTIVE));
     }

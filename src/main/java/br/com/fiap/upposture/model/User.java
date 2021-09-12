@@ -16,9 +16,10 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Email(message = "E-mail inválido")
     @Size(max = 100, message = "O e-mail deve ter no máximo 100 caracteres")
     @NotBlank(message = "O campo e-mail é obrigatório")
+    @Email(message = "E-mail inválido")
+    @Column(unique=true)
     private String email;
 
     @Size(max = 100, message = "A senha deve ter no máximo 100 caracteres")
@@ -38,7 +39,6 @@ public class User {
     private String name;
 
     @Enumerated(EnumType.STRING)
-    @NotNull(message = "O campo status é obrigatório")
     private StatusEnum status;
 
     @Enumerated(EnumType.STRING)

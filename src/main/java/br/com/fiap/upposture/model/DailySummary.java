@@ -17,19 +17,18 @@ public class DailySummary {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
+    @NotNull(message = "O campo wrongPosture é obrigatório")
     @Digits(integer = 3, fraction = 2, message = "O campo deve possuir no máximo 3 dígitos inteiros e 2 decimais")
     private BigDecimal wrongPosture;
 
-    @NotNull
+    @NotNull(message = "O campo alertPosture é obrigatório")
     @Digits(integer = 3, fraction = 2, message = "O campo deve possuir no máximo 3 dígitos inteiros e 2 decimais")
     private BigDecimal alertPosture;
 
-    @NotNull
+    @NotNull(message = "O campo correctPosture é obrigatório")
     @Digits(integer = 3, fraction = 2, message = "O campo deve possuir no máximo 3 dígitos inteiros e 2 decimais")
-    private double correctPosture;
+    private BigDecimal correctPosture;
 
-    @NotNull
     @CreationTimestamp
     private LocalDate date;
 
