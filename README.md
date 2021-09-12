@@ -10,6 +10,8 @@ O projeto backend contará com alguns serviços de cadastro e consulta, abaixo s
 
 O serviço de listagem e inserção de novos relatórios diários. Todos os dias um relatório referente a razão entre a qualidade da postura do usuario e o tempo de uso da cadeira será gerado e armazenado no banco para consultas futuras, portanto criaremos os serviços de consulta desses relatórios e de criação dos relatórios diários. 
 
+![](arquitetura.png)
+
 ## Edpoints
 
 ### Serviços referentes ao resumo diário: 
