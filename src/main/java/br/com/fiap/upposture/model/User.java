@@ -30,6 +30,9 @@ public class User {
     private String name;
 
     @Enumerated(EnumType.STRING)
+    private StatusEnum status;
+
+    @Enumerated(EnumType.STRING)
     private GenderEnum gender;
 
 }
