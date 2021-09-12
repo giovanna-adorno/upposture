@@ -46,6 +46,10 @@ O Usuário será responsável por representar a pessoa que está acessando o apl
 O serviço será utilizado para buscar as informações de uma postura e possíveis dicas para informar o usuário de como é possível melhorar sua postura. 
 
 
-
-
+### TheBugs
+RM 85473 - Danilo Maia Boccomino,
+RM 85555 - Felipe da Silva Marcondes,
+RM 85542 - Giovanna Caroline Adorno,
+RM 83448 - Gustavo Malvone,
+RM 85634 - Murilo Augusto Pereira Nascimento
 
