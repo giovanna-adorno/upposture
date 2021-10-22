@@ -21,10 +21,6 @@ public class DailySummary {
     @Digits(integer = 3, fraction = 2, message = "O campo deve possuir no máximo 3 dígitos inteiros e 2 decimais")
     private BigDecimal wrongPosture;
 
-    @NotNull(message = "O campo alertPosture é obrigatório")
-    @Digits(integer = 3, fraction = 2, message = "O campo deve possuir no máximo 3 dígitos inteiros e 2 decimais")
-    private BigDecimal alertPosture;
-
     @NotNull(message = "O campo correctPosture é obrigatório")
     @Digits(integer = 3, fraction = 2, message = "O campo deve possuir no máximo 3 dígitos inteiros e 2 decimais")
     private BigDecimal correctPosture;

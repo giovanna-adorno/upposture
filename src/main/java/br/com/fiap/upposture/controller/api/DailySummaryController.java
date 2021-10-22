@@ -79,7 +79,6 @@ public class DailySummaryController {
 
         DailySummary dailySummary = optional.get();
 
-        dailySummary.setAlertPosture(newDailySummary.getAlertPosture());
         dailySummary.setCorrectPosture(newDailySummary.getCorrectPosture());
         dailySummary.setWrongPosture(newDailySummary.getWrongPosture());
         dailySummary.setDate(newDailySummary.getDate());
