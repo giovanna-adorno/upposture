@@ -2,11 +2,16 @@ package br.com.fiap.upposture.model;
 
 public enum PositionEnum {
 
-    ideal,
-    ombroEsquerdo,
-    ombroDireito,
-    arqueado,
-    lombar,
-    inclinadoParaDireita;
+    IDEAL,
+
+    OMBRO_ESQUERDO,
+
+    OMBRO_DIREITO,
+
+    ARQUEADO,
+
+    LOMBAR,
+
+    INCLINADO_PARA_DIREITA
 
 }

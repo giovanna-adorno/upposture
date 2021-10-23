@@ -1,5 +1,6 @@
 package br.com.fiap.upposture.model;
 
+import lombok.Builder;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -11,6 +12,7 @@ import java.time.LocalDate;
 
 @Data
 @Entity
+@Builder
 public class DailySummary {
 
     @Id
